@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
@@ -22,6 +23,7 @@ public class GitHubTest {
         WebElement blueTitle = driver.findElement(By.cssSelector("h3"));
         String expected = "Guru99 is totally new kind of learning experience.";
 
+        Reporter.log("Actual Blue Title: " + blueTitle.getText());
         Assert.assertEquals(blueTitle.getText(),expected);
 
         try{Thread.sleep(2000);}catch(Exception e){System.out.println(e.getMessage());}
